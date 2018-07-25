@@ -1,0 +1,12 @@
+
+.idea/
+.DS_Store
+.sass-cache
+git/
+bower_components/
+node_modules/
+
+＃npm run build生成的文件
+dist/
+
+npm-debug.log
