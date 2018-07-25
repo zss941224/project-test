@@ -10,7 +10,7 @@ var autoprefixer = require('gulp-autoprefixer'); // 引入css样式自动加浏�
 var connect = require('gulp-connect');
 var proxy = require('http-proxy-middleware');
 var path = require('path');
-var projectdir = path.resolve(__dirname, '../newsitehtml/');
+var projectdir = path.resolve(__dirname, '../project-test/');
 var through = require('through2');
 var fz = 41.4;
 
@@ -20,14 +20,14 @@ gulp.task('server', function() {
         livereload: true,  //实时刷新
         port: 8989,
 				host:'0.0.0.0',
-        middleware: function (connect, opt) {
-          return [
-              proxy(['/api'], {
-                  target: 'http://192.168.1.13', //这里实际的测试地址
-                  changeOrigin: true
-              })
-          ]
-        }
+        // middleware: function (connect, opt) {
+        //   return [
+        //       proxy(['/api'], {
+        //           target: 'http://192.168.1.13', //这里实际的测试地址
+        //           changeOrigin: true
+        //       })
+        //   ]
+        // }
     });
 });
 
@@ -36,7 +36,7 @@ gulp.task('scssTotmpcss', ()=>{
   // 编译css
   var sass = require('gulp-ruby-sass');
   var concat = require('gulp-concat');
-  return sass(['public/scss/newsite/*.scss'],{
+  return sass(['public/scss/*.scss'],{
       style: 'expanded',
       precision: 10
       })
@@ -52,23 +52,23 @@ gulp.task('tmpcssTocss', ()=>{
       cascade: true,
       remove: true
     }))
-    .pipe(gulp.dest('public/styles/newsite'))
+    .pipe(gulp.dest('public/styles'))
 });
 
 gulp.task('css', ['scssTotmpcss', 'tmpcssTocss']);
 
 // 压缩css
 gulp.task('minifycss',function(){
-	return gulp.src(['public/styles/newsite/**/*.css'])
+	return gulp.src(['public/styles/**/*.css'])
 	.pipe(minifycss())
-	.pipe(gulp.dest('dist/styles/newsite'))
+	.pipe(gulp.dest('dist/styles'))
 })
 
 // 压缩js
 gulp.task('js',function(){
-	return gulp.src(['public/scripts/newsite/**/*.js'])
+	return gulp.src(['public/scripts/test/**/*.js'])
 		.pipe(uglify().on('error', gulpUtil.log))
-		.pipe(gulp.dest('dist/scripts/newsite'));
+		.pipe(gulp.dest('dist/scripts/test'));
 })
 
 // gulp.task('jub',function() {
@@ -111,13 +111,13 @@ gulp.task('spriter',()=>{
   const spritesmith = require('gulp.spritesmith');
 
   // 分文件夹合并雪碧图
-  return gulp.src('public/images/newsite/icons/**')
+  return gulp.src('public/images/icons/**')
         .pipe(through.obj(function(file,enc,cb){
               if(file.relative && file.relative.indexOf('.')=='-1'){
-                gulp.src('public/images/newsite/icons/'+file.relative+'/*.png')
+                gulp.src('public/images/icons/'+file.relative+'/*.png')
                   .pipe(spritesmith({
-                      imgName:'public/images/newsite/'+file.relative+'_sprite.png',  //保存合并后图片的地址
-                      cssName:'public/scss/newsite/'+file.relative+'_sprite.scss',   //保存合并后对于css样式的地址
+                      imgName:'public/images/'+file.relative+'_sprite.png',  //保存合并后图片的地址
+                      cssName:'public/scss/'+file.relative+'_sprite.scss',   //保存合并后对于css样式的地址
                       padding:30,
                       algorithm:'top-down',
                       cssTemplate:function(data){
@@ -127,33 +127,6 @@ gulp.task('spriter',()=>{
                           // console.log('sprite.px:',sprite.px)
                           var name = '.icon-'+sprite.name;
                           var mobileSizeScale = 0.8;
-
-													if(file.relative == 'about') mobileSizeScale = 0.5;
-													if(file.relative == 'joinus') mobileSizeScale = 0.7;
-													if(file.relative == 'client') mobileSizeScale = 0.7;
-                          if(sprite.name == 'jw-market') mobileSizeScale = 0.7;
-													else if(sprite.name == 'simple') mobileSizeScale = 0.45
-													else if(sprite.name == 'get-route') mobileSizeScale = 0.9;
-                          else if(sprite.name == 'jw-back') mobileSizeScale = 0.6;
-                          else if(sprite.name == 'jw-next') mobileSizeScale = 0.9;
-                          else if(sprite.name == 'jw-ios') mobileSizeScale = 0.6;
-
-                          var width = ((parseFloat(sprite.px.width.replace("px",''))+1.5)/2/fz*mobileSizeScale+'rem');
-                          var height = ((parseFloat(sprite.px.height.replace("px",''))+0.05)/2/fz*mobileSizeScale+'rem');
-
-                          if(sprite.name=='jw-market' || sprite.name=='jw-sign' || sprite.name=='jw-track') height = ((parseFloat(sprite.px.height.replace("px",''))+1)/2/fz*mobileSizeScale+'rem')
-                          else if(sprite.name=='logosm-insurance-1' || sprite.name=='logosm-insurance-2' || sprite.name=='logosm-yumchina-1' || sprite.name=='logosm-yumchina-2') height = ((parseFloat(sprite.px.height.replace("px",''))+2)/2/fz*mobileSizeScale+'rem')
-                          else if(sprite.name=='jw-ios') height = ((parseFloat(sprite.px.height.replace("px",''))-2)/2/fz*mobileSizeScale+'rem')
-
-                          if(sprite.name=='jw-recommend'||sprite.name=='jw-dealer-community'||sprite.name=='jw-campaign'){
-                            width = ((parseFloat(sprite.px.width.replace("px",''))+2)/2/fz*mobileSizeScale+'rem');
-                            height = ((parseFloat(sprite.px.height.replace("px",''))+2)/2/fz*mobileSizeScale+'rem');
-                          }else if(sprite.name=='jw-ios'){
-                            height = ((parseFloat(sprite.px.height.replace("px",''))+0.05)/2/fz*mobileSizeScale+'rem');
-                          }else if(sprite.name=='jw-feedback'){
-														width = ((parseFloat(sprite.px.width.replace("px",''))+1.5)/2/fz*mobileSizeScale+'rem');
-														height = ((parseFloat(sprite.px.height.replace("px",''))+0.05)/2/fz*mobileSizeScale+'rem');
-													}
 
                           let newMobileData;
 
@@ -198,13 +171,13 @@ gulp.task('spriter',()=>{
 
 // 压缩图片
 gulp.task('mini',function(){
-	return gulp.src('public/images/newsite/**/')
+	return gulp.src('public/images/**/')
 		.pipe(imagemin({
 			progressive: true,
 			svgoPlugins: [{removeViewBox: false}],
 			use: [pngquant()]
 		}))
-		.pipe(gulp.dest('dist/images/newsite'));
+		.pipe(gulp.dest('dist/images'));
 })
 
 gulp.task('publish',['css','minifycss','js','mini'],function(){
@@ -217,11 +190,11 @@ gulp.task('html', function() {
 });
 
 gulp.task('default',['server','spriter','css'],function(){
-  gulp.watch(['public/images/newsite/icons/**'],['spriter']);
-  gulp.watch(['public/scss/newsite/*.scss'],['css']);
+  gulp.watch(['public/images/icons/**'],['spriter']);
+  gulp.watch(['public/scss/*.scss'],['css']);
   gulp.watch([
-    'public/images/newsite/**',
-    'public/scss/newsite/*.scss',
+    'public/images/**',
+    'public/scss/*.scss',
     'public/scripts/**/*.js',
     '*.html'
     ],['html']);

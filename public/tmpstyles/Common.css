@@ -1,84 +1,99 @@
-//
-// Common styles
-// --------------------------------------------------
+@charset "UTF-8";
+.bg-yellow {
+  background: #FFD600;
+}
 
-@import "./Variables";
+.bg-orange {
+  background: #F55928;
+}
 
-
-//== CSS RESET
-//
-//## Style initialization
-*{
+* {
   -webkit-overflow-scrolling: touch;
 }
-body{
-  font-size: $font-size-base;
-  background: $body-bg;
+
+body {
+  font-size: 0.3381642512rem;
+  background: #fff;
 }
+
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
-  font-family: $font-family-base;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Segoe UI", "Helvetica Neue", "PingFang SC", "Noto Sans", "Noto Sans CJK SC", "Microsoft YaHei", 微软雅黑, sans-serif;
   font-weight: 300;
   margin: 0;
   padding: 0;
 }
-button{
+
+button {
   outline: none;
 }
-img[src=""],img:not([src]){opacity:0;}
-// mobile(移动端字体)
-@media screen and (max-width: 449px){
+
+img[src=""], img:not([src]) {
+  opacity: 0;
+}
+
+@media screen and (max-width: 449px) {
   body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
-    font-family: $font-family-base-mobile;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Segoe UI", "Helvetica Neue", "PingFang SC", "Noto Sans", "Noto Sans CJK SC", "Microsoft YaHei", 微软雅黑, sans-serif;
     font-weight: 300;
     margin: 0;
     padding: 0;
   }
 }
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
 }
+
 address, cite, dfn, em, var {
   font-style: normal;
 }
+
 code, kbd, pre, samp {
-  font-family: $font-family-monospace;
+  font-family: couriernew, courier, monospace;
 }
+
 ul, ol {
   list-style: none;
 }
+
 a {
   text-decoration: none;
 }
+
 sup {
   vertical-align: text-top;
 }
-sub{
+
+sub {
   vertical-align: text-bottom;
 }
+
 legend {
   color: #000;
 }
+
 fieldset, img {
   border: 0;
 }
+
 button, input, select, textarea {
   font-size: 100%;
   outline: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-.hide{
+.hide {
   display: none;
 }
-// 清除所有浮动
-.clear{
+
+.clear {
   clear: both;
 }
-// 禁止选择，加上此类，文字就不会被选中
-.un-select{
+
+.un-select {
   moz-user-select: -moz-none;
   -moz-user-select: none;
   -o-user-select: none;
@@ -87,19 +102,29 @@ table {
   -ms-user-select: none;
   user-select: none;
 }
-// div增加此类后，设置的宽高就是实际的宽高，不会因为设置了padding而变大
-.div-ignore-spacing{
-  box-sizing:border-box;
-  -moz-box-sizing:border-box; /* Firefox */
-  -webkit-box-sizing:border-box; /* Safari */
+
+.div-ignore-spacing {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
 }
-// 单行省略
-.ellipsis{white-space:nowrap;overflow:hidden;-o-text-overflow:ellipsis;-moz-binding:url('ellipsis.xml#ellipsis');text-overflow:ellipsis;display:block;}
-// 多行省略
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  -moz-binding: url("ellipsis.xml#ellipsis");
+  text-overflow: ellipsis;
+  display: block;
+}
+
 .ellipsis-2l {
-  overflow : hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;    /* 数值代表显示几行 */
+  -webkit-line-clamp: 2;
+  /* 数值代表显示几行 */
   -webkit-box-orient: vertical;
 }
