@@ -130,16 +130,16 @@ gulp.task('spriter',()=>{
 
                           let newMobileData;
 
-                          // 移动端rem布局的
-                          newMobileData = {
-                            "display":"inline-block",
-                            "background-image": 'url('+sprite["escaped_image"]+')',
-                            "background-position":((sprite.px.offset_x.replace("px",''))/2/fz*mobileSizeScale+'rem')+' '+((parseFloat(sprite.px.offset_y.replace("px",'')))/2/fz*mobileSizeScale+'rem'),
-                            "background-size":((sprite.total_width) / 2 /fz*mobileSizeScale+"rem")+' '+((sprite.total_height) / 2 /fz*mobileSizeScale+"rem"),
-                            "width":width,
-                            "height":height
-                          }
-                          mobileSpriteObj[name] = newMobileData;
+                          // // 移动端rem布局的
+                          // newMobileData = {
+                          //   "display":"inline-block",
+                          //   "background-image": 'url('+sprite["escaped_image"]+')',
+                          //   "background-position":((sprite.px.offset_x.replace("px",''))/2/fz*mobileSizeScale+'rem')+' '+((parseFloat(sprite.px.offset_y.replace("px",'')))/2/fz*mobileSizeScale+'rem'),
+                          //   "background-size":((sprite.total_width) / 2 /fz*mobileSizeScale+"rem")+' '+((sprite.total_height) / 2 /fz*mobileSizeScale+"rem"),
+                          //   "width":width,
+                          //   "height":height
+                          // }
+                          // mobileSpriteObj[name] = newMobileData;
                           // web端px布局的
                           let newWebData = {
                             "display":"inline-block",

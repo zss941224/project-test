@@ -9,9 +9,9 @@ $webfontSize: 144; // 1440设计
 //
 //## Gray and brand colors
 
-$gray-darker:      #202020; // 需要突出展示的文字 (大标题,docviewer背景色，弹出框蒙版色)
-$gray-dark:        #333333; // 全局字体颜色 (标题 用户名 正文字)
-$gray:             #666666; // 次级文字颜色（使用场景待补充）
+$gray-darker:       #202020;  // 需要突出展示的文字 (大标题,docviewer背景色，弹出框蒙版色)
+$gray-dark:         #333333;  // 全局字体颜色 (标题 用户名 正文字)
+$gray:              #666666;  // 次级文字颜色（使用场景待补充）
 $gray-light:        #999999; // 多用于提示性文字（placehodler等），或标识不可用状态（如按钮disabled背景色，链接disabled等），
 $gray-lighter:      #b0b0b0; // 辅助性颜色，多用于对象名称旁边的辅助文字颜色（如创建时间，职位等）
 $gray-lighter-1:    #cccccc; // 灰色浅1 ( 多用于比较重的分隔线，边框等 )
@@ -19,10 +19,15 @@ $gray-lighter-2:    #e7e7e7; // 灰色浅2（多用于比较浅的分隔线，�
 $gray-lighter-3:    #f1f1f1; // 灰色浅3，( 主背景色 )
 $gray-lighter-4:    #f7f7f7; // 灰色浅4，( navbar背景，下拉列表背景等 )
 $gray-lighter-5:    #fafafa; // 灰色浅5，（超浅背景色）
-$white: #fff;
+$gray-lighter-6:    #f4f5f6; // 灰色浅5，（超浅背景色）
+$gray-lighter-7:    #cacbcc; // 灰色浅5，（超浅背景色）
+$white:             #fff;
 
 $gray-light-1:      #494949; // 新建IT设备维修表单样式
 $gray-light-2:      #5b5b5b; // 明细页面值的颜色
+
+$login-error-tips:  #ff3b2f;
+$login-submit-btn:  #404a53;
 
 $second-text-color: #777777;
 $product-second-text-color: #999999;
@@ -106,17 +111,25 @@ $font-family-base:        $font-family-sans-serif;
 $font-family-base-mobile:        $font-family-sans-serif-mobile;
 
 //## 注：此字号是移动端规则，web端规则需由 @齐华锋 补充
-$font-size-large:        pxTorem(16); // 大字号(大标题)
-$font-size-base:         pxTorem(14);  // 基础字号(全局字号,正文，标题)
-$font-size-secondary:    39px;  // 次级文字( 使用场景待补充 )
-$font-size-small:        pxTorem(13); // 小字号（注释／小字）
-$font-size-xsmall:       pxTorem(12); // 超小字号, 辅助类文字（如信息来源，创建时间）
+// $font-size-large:        pxTorem(16); // 大字号(大标题)
+// $font-size-base:         pxTorem(14);  // 基础字号(全局字号,正文，标题)
+// $font-size-secondary:    39px;  // 次级文字( 使用场景待补充 )
+// $font-size-small:        pxTorem(13); // 小字号（注释／小字）
+// $font-size-xsmall:       pxTorem(12); // 超小字号, 辅助类文字（如信息来源，创建时间）
+//
+// $font-size-xsmall1:       pxTorem(10); // 非项目卡片的餐厅编号  总价字体
+//
+// $font-size-large1:        pxTorem(15); // 大字号(button字号)
+// $font-size-xlarge:        pxTorem(20); // 待办卡片上金额
+// $font-size-xlarge1:        pxTorem(22); // 非项目审批底部总金额
 
-$font-size-xsmall1:       pxTorem(10); // 非项目卡片的餐厅编号  总价字体
-
-$font-size-large1:        pxTorem(15); // 大字号(button字号)
-$font-size-xlarge:        pxTorem(20); // 待办卡片上金额
-$font-size-xlarge1:        pxTorem(22); // 非项目审批底部总金额
+//## 注：此字号是web端规则 web端使用时将此代码块打开，将上方代码块删除
+$font-size-larger:       18px; // 大字号(大标题)
+$font-size-large:        16px; // 大字号(大标题)
+$font-size-base:         14px;  // 基础字号(全局字号,正文，标题)
+$font-size-secondary:    13px;  // 次级文字( 使用场景待补充 )
+$font-size-small:        12px; // 小字号（注释／小字）
+$font-size-xsmall:       10px; // 超小字号, 辅助类文字（如信息来源，创建时间）
 
 //== Components
 

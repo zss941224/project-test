@@ -3,3 +3,143 @@
 // --------------------------------------------------
 
 @import "./Variables";
+
+.Index{
+  // 背景
+  .homepage-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  // logo
+  .homepage-logo{
+    color: white;
+    position: absolute;
+    top: 5%;
+    left:5%;
+    font-size: 50px;
+  }
+  // 座右铭
+  .homepage-motto{
+    height: 150px;
+    position: absolute;
+    left: 5%;
+    border-left: 3px solid $white;
+    top: 40%;
+    .homepage-motto-zh{
+      font-size: 40px;
+      color: $white;
+      margin-left: 20px;
+    }
+    .homepage-motto-en{
+      font-size: 25px;
+      color: $white;
+      margin: 10px 0 0 22px;
+      font-weight: 200;
+      letter-spacing: 1px;
+    }
+    .homepage-motto-record{
+      font-size: 16px;
+      color: $gray-lighter;
+      margin: 20px 0 0 25px;
+      font-weight: 200;
+      letter-spacing: 1px;
+    }
+  }
+  // 登录表单
+  .homepage-login-w{
+    width: 500px;
+    position: absolute;
+    right: 5%;
+    top: 27%;
+    height: auto;
+    background: $white;
+    border-radius: 8px;
+    box-shadow:  0 2px 28px 0 rgba(0,0,0,0.20);
+    .homepage-login{
+      height: 100%;
+      margin: 0 50px;
+      padding: 40px 0;
+      h3{
+        font-size: 26px;
+        color: $gray-dark;
+        font-weight: 400;
+        letter-spacing: 2px;
+        margin-bottom: 6px;
+      }
+      .homepage-login-common{
+        width: 100%;
+        height: 50px;
+        margin-top: 20px;
+        position: relative;
+        background: $gray-lighter-6;
+        border-left: 2px solid $gray-lighter-7;
+        border-right: 2px solid $gray-lighter-7;
+        .homepage-login-input{
+          border: none;
+          width: 100%;
+          height: 35px;
+          margin-top: 15px;
+          font-size: $font-size-base;
+          border: none;
+          color: $gray-light-1;
+          background: $gray-lighter-6;
+          padding-left: 10px;
+        }
+        .homepage-login-label{
+          position: absolute;
+          top: 15px;
+          left: 10px;
+          font-size: $font-size-base;
+          color: $gray-lighter;
+          font-weight: 100;
+        }
+        .icon-hide-pwd{
+          position: absolute;
+          top: 21px;
+          right: 11px;
+          cursor: pointer;
+        }
+      }
+      .homepage-login-error{
+        font-size: $font-size-small;
+        color: $login-error-tips;
+        margin-top: 12px;
+        letter-spacing: 1px;
+        font-weight: 400;
+      }
+      .homepage-login-btn{
+        width: 100%;
+        height: 57px;
+        background: $login-submit-btn;
+        margin-top: 25px;
+        color: $white;
+        font-size: $font-size-large;
+        letter-spacing: 3px;
+        text-align: center;
+        line-height: 57px;
+        border: none;
+        border-radius: 3px;
+      }
+      .homepage-login-actions{
+        margin-top: 13px;
+        a{
+          display: inline-block;
+          font-size: $font-size-secondary;
+          color: $gray-light;
+        }
+        .change-register-page{
+          float: right;
+        }
+      }
+    }
+  }
+}
