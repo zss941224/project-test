@@ -31,12 +31,10 @@
       <div class="homepage-login">
         <h3>欢迎登录</h3>
         <div class="homepage-login-common">
-          <input type="text" class="homepage-login-input" />
-          <label class="homepage-login-label">请输入用户名</label>
+          <input type="text" placeholder="请输入用户名" class="homepage-login-input" />
         </div>
         <div class="homepage-login-common">
-          <input type="password" class="homepage-login-input" />
-          <label class="homepage-login-label">请输入密码</label>
+          <input type="password" placeholder="请输入密码" class="homepage-login-input" />
           <i class='icon-hide-pwd'></i>
         </div>
         <div class="homepage-login-error hide">
@@ -49,10 +47,33 @@
         </div>
       </div>
     </div>
+    <div class="homepage-register-w hide">
+      <div class="homepage-register">
+        <h3>欢迎注册</h3>
+        <div class="homepage-login-common">
+          <input type="text" placeholder="手机号/电子邮箱" class="homepage-login-input" />
+        </div>
+        <div class="homepage-login-common">
+          <input type="password" placeholder="请输入密码" class="homepage-login-input" />
+          <i class='icon-hide-pwd'></i>
+        </div>
+        <div class="homepage-login-common">
+          <input type="password" placeholder="确认密码" class="homepage-login-input" />
+          <i class='icon-hide-pwd'></i>
+        </div>
+        <div class="homepage-login-error hide">
+          两次输入密码不一致，请重新输入
+        </div>
+        <div class="homepage-login-actions">
+          <a class="change-login-page">已有有账号？登录</a>
+        </div>
+        <button class="homepage-login-btn">注册</button>
+      </div>
+    </div>
   </div>
 </body>
 <script type="text/javascript">
   document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px';
 </script>
-<!-- <script type="text/javascript" src="scripts/test/index.js"></script> -->
+<script type="text/javascript" src="./public/scripts/test/index.js"></script>
 </html>
